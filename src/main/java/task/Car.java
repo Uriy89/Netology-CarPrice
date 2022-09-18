@@ -1,13 +1,13 @@
 package task;
 
 public class Car {
-    private String brand;
+    private String name;
 
     public Car() {
-        brand = "Toyota";
+        name = "Toyota";
     }
 
-    public String getBrand() {
-        return this.brand;
+    public String getName() {
+        return this.name;
     }
 }
