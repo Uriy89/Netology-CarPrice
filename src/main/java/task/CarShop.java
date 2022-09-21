@@ -3,6 +3,7 @@ package task;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class CarShop extends Thread {
 
     private final List<Car> cars = new ArrayList<>();
@@ -19,7 +20,6 @@ public class CarShop extends Thread {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-
                 try {
                     Thread.sleep(TIMEOUT);
                 } catch (InterruptedException e) {
@@ -52,7 +52,6 @@ public class CarShop extends Thread {
                 System.out.println("\nПроизводитель " + name + " выпустил 1 авто\n");
                 notifyAll();
             }
-
         }
     }
 
