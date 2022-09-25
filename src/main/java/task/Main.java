@@ -6,14 +6,12 @@ public class Main {
         final CarShop shop = new CarShop();
 
         Runnable shopping = shop::buyCar;
-        Thread bayer1 = new Thread(null, shopping, "Покупатель1");
-        bayer1.start();
-        Thread bayer2 = new Thread(null, shopping, "Покупатель2");
-        bayer2.start();
-        Thread bayer3 = new Thread(null, shopping, "Покупатель3");
-        bayer3.start();
-        Thread bayer4 = new Thread(null, shopping, "Покупатель4");
-        bayer4.start();
+        for (int i = 1; i < 4; i++) {
+            String name = "Покупатель" + i;
+            Thread bayer1 = new Thread(null, shopping, name);
+            bayer1.start();
+        }
+
 
         new Thread(null, shop::produceCar, "Автопром").start();
     }
